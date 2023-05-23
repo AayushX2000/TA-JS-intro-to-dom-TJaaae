@@ -6,6 +6,17 @@ default value to be "text" and return the input element inside label. (create it
 */
 
 // Your code goes here
+function createInputElm(label,type="text"){
+let labele=document.createElement("label");
+let input=document.createElement("input");
+input.type=type;
+let all=labele.appendChild(input);
+all.appendChild(document.createTextNode(label));
+return all
+
+}
+ 
+
 
 // TEST
 createInputElm('Your name'); //<label>Your name: <input type="text"></label>
@@ -14,6 +25,9 @@ createInputElm('Your age', 'number'); //<label>Your age: <input type="number"></
 // 2. Do the same thing as above using string literal like `<h1>Hello</h1>`
 
 // Your code goes here
+function string(label,type="text"){
+  return `<label>${label}<input type="${type}"></lable>`
+}
 
 // TEST
 createInputElm('Your name'); //<label>Your name: <input type="text"></label>
@@ -22,7 +36,35 @@ createInputElm('Your age', 'number'); //<label>Your age: <input type="number"></
 // 3. Create a function named `createList` that accept and array of data like ['Mango', 'Apple', 'Banana'] and returns
 // the html for the link like <ul> <li>Mango</li>  <li>Apple</li>  <li>Banana</li> </ul>
 // Your code goes here
+function createList(arr){
+  let html=document.createElement("ul");
+  
+  
+  arr.forEach(ele => {
+    let li =document.createElement("li");
+    li.innerText=ele;
+    html.append(li)
+    
+  });
+ 
+  return html
 
+}
+
+// function createList(arr){
+//   let html="<ul>";
+
+  
+
+//   arr.forEach(ele => {
+//    html+=`<li>${ele}</li>`;
+    
+//   });
+//   html+="</ul>"
+  
+//   return html
+
+// }
 // TEST
 createList(['ALABAMA', 'ALASKA', 'HAWAII', 'KENTUCKY']);
 createList(['Afghanistan', 'Antarctica', 'Congo', 'Estonia']);
@@ -39,7 +81,33 @@ createList(['Afghanistan', 'Antarctica', 'Congo', 'Estonia']);
 </ul>
 */
 
-// Your code goes here
+// 
+function createTodoList(arr){
+  let ul=document.createElement("ul");
+  let li=document.createElement("li")
+ 
+
+
+let span=document.createElement("span");
+arr.forEach((ele)=>{
+  if(ele.isDone===true){
+    
+let input=document.createElement("input");
+input.type="checkbox"
+input.checked.name=ele.name
+    let p=document.createElement("p");
+    p.innerText=ele.name;
+    span.innerText="X"
+   
+    li.append(p,input,span);
+  }
+
+})
+
+ul.append(li);
+return ul
+
+}
 
 // TEST
 createTodoList([
