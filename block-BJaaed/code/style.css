@@ -1,0 +1,36 @@
+h1{
+    text-align:  center;
+    padding: 1rem 0;
+}
+header{
+    background-color: blue;
+}
+.container{
+    width: 100%;
+   
+    display: flex;
+    
+    background-color: beige;
+    flex-wrap: wrap;
+    box-shadow: 10px;
+}
+.box{
+    flex: 0 1 28%;
+    text-align: center;
+    background-color: #ffff;
+    margin: 10px auto;
+    padding: 16px;
+    
+
+}
+.img{
+    width: 33%;
+}
+.name{
+    color: aliceblue;
+}
+.btn{
+    font-size: 18px;
+    padding: 10px;
+    background-color: cadetblue;
+}
